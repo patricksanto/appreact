@@ -40,7 +40,7 @@ const mario = {
 };
 
 const App = () => {
-  const dados = luana;
+  const dados = mario;
   const gastos = dados.compras.map((price) => parseInt(price.preco.replace('R$ ', '')));
   const soma = gastos.reduce(function(soma, i) {
     return soma + i;
@@ -57,6 +57,7 @@ const App = () => {
       </span>
     </p>
     <p>Total de gastos: R$ {soma}</p>
+    {soma > 10000 && <p>Você esta gastando muito</p>}
   </>
   )
 };
